@@ -127,8 +127,8 @@ for i in range(len(lista_pasta)):
         lista_cpf+=lista_cpfa
         lista_resultado+=lista_resultadoa
         lista_pedido+=lista_pedidoa
-        lista_data+=lista_data, 
-        lista_title+=lista_title
+        lista_data+=lista_dataa 
+        lista_title+=lista_titlea
         lista_ipc+=lista_ipca
         
 df = pd.DataFrame(
