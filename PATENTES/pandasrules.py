@@ -12,7 +12,7 @@ import dash
     #print(htmls)
 def contem_itens(file):
     with open(file) as fp:
-    #with open("00000000000191-01.html") as fp:
+    
         soup = BeautifulSoup(fp,"html5lib")
 
     soup=soup.table
@@ -80,10 +80,8 @@ def contem_itens(file):
 
     for i in range(len(lista_ipc)):
         lista_resultado.append(numberofresults)
-    df = pd.DataFrame(
-        list(zip(lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc)),
-        columns=['Arquivo', 'CPNJ', "RESULTADO", "NÚMERO DO PEDIDO", "Data do Depósito", "Título", "IPC"])
-    return df
+   
+    return lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc
 
 def itens_vazio(file):
         with open(file) as fp:
@@ -101,10 +99,8 @@ def itens_vazio(file):
         lista_cpf=["cpf"]
         lista_resultado=["0"]
         lista_file=[f"{file}"]
-        df = pd.DataFrame(
-            list(zip(lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc)),
-            columns=['Arquivo', 'CPNJ', "RESULTADO", "NÚMERO DO PEDIDO", "Data do Depósito", "Título", "IPC"])
-        return df
+     
+        return lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc
 
 
 
@@ -123,16 +119,26 @@ for i in range(len(lista_pasta)):
         soup= soup.text
         text_to_find ="Nenhum resultado foi encontrado para a sua pesquisa"
         if soup.find("Nenhum resultado foi encontrado para a sua pesquisa")=="-1":
-            df=itens_vazio(file)
+            lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca=itens_vazio(file)
         else:
-            df=contem_itens(file)
-        lista_de_Dfs.append[df]
+            lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca=contem_itens(file)
+        
+        lista_file+=lista_filea
+        lista_cpf+=lista_cpfa
+        lista_resultado+=lista_resultadoa
+        lista_pedido+=lista_pedidoa
+        lista_data+=lista_data, 
+        lista_title+=lista_title
+        lista_ipc+=lista_ipca
+        
+df = pd.DataFrame(
+            list(zip(lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc)),
+            columns=['Arquivo', 'CPNJ', "RESULTADO", "NÚMERO DO PEDIDO", "Data do Depósito", "Título", "IPC"])
+ 
 
-# 
-#
-# app = Dash(__name__)
-#
-# app.layout = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
-#
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
+app = Dash(__name__)
+
+app.layout = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+
+if __name__ == '__main__':
+     app.run_server(debug=True)
