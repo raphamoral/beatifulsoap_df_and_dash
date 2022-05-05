@@ -92,8 +92,6 @@ def contem_itens(file):
 
 
     lista_pedidoa.pop(0)
-        #print(lista_pedido)
-        #print(lista_data)
 
 
 
@@ -120,15 +118,8 @@ def itens_vazio(file):
         lista_cpfa=[f"{cpf}"]
         lista_resultadoa=["0"]
         lista_filea=[f"{file}"]
-        print("file", file
-              )
-        print(lista_filea)
-        print(lista_cpfa)
-        print(lista_resultadoa)
-        print(lista_pedidoa)
-        print(lista_dataa)
-        print(lista_titlea)
-        print(lista_ipca)
+
+
 
 
         return lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca
@@ -173,7 +164,6 @@ df = pd.DataFrame(
             list(zip(lista_file, lista_cpf, lista_resultado, lista_pedido, lista_data, lista_title, lista_ipc)),
             columns=['Arquivo', 'CPNJ', "RESULTADO", "NÚMERO DO PEDIDO", "Data do Depósito", "Título", "IPC"])
 
-print(df)
 
 
 # 
