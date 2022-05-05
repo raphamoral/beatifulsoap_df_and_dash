@@ -100,14 +100,7 @@ def contem_itens(file):
     for i in range(len(lista_ipca)):
         lista_resultadoa.append(numbertoappend)
 
-    print("file",file)
-    print(lista_filea)
-    print(lista_cpfa)
-    print(lista_resultadoa)
-    print(lista_pedidoa)
-    print(lista_dataa)
-    print(lista_titlea)
-    print(lista_ipca)
+
     return lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca
 
 def itens_vazio(file):
