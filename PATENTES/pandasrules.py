@@ -47,6 +47,8 @@ def contem_itens(file):
         if len(variable_text)>10:
 
             lista_titlea.append(variable_text)
+        elif variable_text =="":
+            pass
         else:
 
             lista_ipca.append(variable_text)
@@ -60,10 +62,10 @@ def contem_itens(file):
     lista_filea=[]
     lista_resultadoa=[]
 
-    for i in range(len(lista_ipca)):
+    for i in range(len(lista_ipca)-1):
         lista_filea.append(file)
 
-    for i in range(len(lista_ipca)):
+    for i in range(len(lista_ipca)-1):
         lista_cpfa.append(cpf)
     lista_dataa.pop(0)
     lista_dataa.pop(0)
@@ -82,7 +84,7 @@ def contem_itens(file):
 
     if len(lista_ipca)>len(lista_titlea):
         number_to_pop=len(lista_ipca)-len(lista_titlea)
-        for i in range(1,number_to_pop):
+        for i in range(0,number_to_pop):
             lista_ipca.pop(-1)
 
 
@@ -95,11 +97,17 @@ def contem_itens(file):
 
 
 
-    for i in range(len(lista_ipca)-1):
+    for i in range(len(lista_ipca)):
         lista_resultadoa.append(numbertoappend)
 
-    print("file",file, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca
-          )
+    print("file",file)
+    print(lista_filea)
+    print(lista_cpfa)
+    print(lista_resultadoa)
+    print(lista_pedidoa)
+    print(lista_dataa)
+    print(lista_titlea)
+    print(lista_ipca)
     return lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca
 
 def itens_vazio(file):
@@ -119,9 +127,16 @@ def itens_vazio(file):
         lista_cpfa=[f"{cpf}"]
         lista_resultadoa=["0"]
         lista_filea=[f"{file}"]
-        print("file", file, lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea,
-              lista_ipca
+        print("file", file
               )
+        print(lista_filea)
+        print(lista_cpfa)
+        print(lista_resultadoa)
+        print(lista_pedidoa)
+        print(lista_dataa)
+        print(lista_titlea)
+        print(lista_ipca)
+
 
         return lista_filea, lista_cpfa, lista_resultadoa, lista_pedidoa, lista_dataa, lista_titlea, lista_ipca
 
