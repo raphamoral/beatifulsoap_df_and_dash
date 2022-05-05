@@ -1,9 +1,7 @@
 # beatifulsoap_df_and_dash
 
 This project is a exemple how to webscrapping HTML pages and get data information and put in one table. Enjoy it! You can fork or train with another pages.
-This is the result of the project.![image](https://user-images.githubusercontent.com/80533929/166860850-bf5cbf13-b082-41f0-b2b0-48cfb3cafbc0.png)
-
-
+This is the result of the project.!![image](https://user-images.githubusercontent.com/80533929/166861727-aef97f0c-778a-4c25-920b-8fc1a4bd8dce.png)
 
 
 There is a list in pipfile and pipfile.lock to install packages , frameworks or libraries, but its here too
