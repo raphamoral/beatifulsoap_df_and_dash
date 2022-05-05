@@ -17,6 +17,7 @@ matplotlib = "*"
 html-to-json = "*"
 selenium = "*"
 lxml = "*"
+dash-bootstrap-components = "*"
 
 [dev-packages]
 
