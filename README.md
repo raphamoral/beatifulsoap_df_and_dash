@@ -5,7 +5,7 @@ This is the result of the project.![image](https://user-images.githubusercontent
 
 
 
-There is a list in pipfile and pipfile.lock to install packages , frameworks or libraries, but its here too
+There is a list in pipfile and pipfile.lock to install packages , frameworks or libraries, but its here too.
 [packages]
 dash = "*"
 xmltojson = "*"
